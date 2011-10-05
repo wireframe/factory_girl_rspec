@@ -1,0 +1,5 @@
+Ryan Sonnek - Original Author
+
+
+Complete list of contributors:
+https://github.com/wireframe/factory_girl_rspec/contributors
