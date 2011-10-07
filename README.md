@@ -4,7 +4,8 @@ Integrate FactoryGirl fixture initialization into the RSpec DSL.
 
 ## Usage
 
-Basic usage
+Basic usage:
+
 ```ruby
 # spec/models/user_spec.rb
 describe User do
@@ -17,7 +18,8 @@ describe User do
 end
 ```
 
-Advanced usage
+Advanced usage:
+
 ```ruby
 # spec/models/user_spec.rb
 describe User do
