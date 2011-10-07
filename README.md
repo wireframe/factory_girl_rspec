@@ -4,26 +4,35 @@ Integrate FactoryGirl fixture initialization into the RSpec DSL.
 
 ## Usage
 
-```ruby 
-# spec/factories/user_factory.rb
-Factory.define :user do |f|
-  f.email 'john@acme.com'
-  f.first_name "John"
-  f.last_name "Doe"
-  f.phone_number '555.5555'
-end
-```
-
+Basic usage
 ```ruby
 # spec/models/user_spec.rb
 describe User do
   context 'basic user' do
+    # instantiate FactoryGirl :user fixture
     with :user
     it { user.should be_inactive }
     it { user.should_not be_happy }
   end
 end
 ```
+
+Advanced usage
+```ruby
+# spec/models/user_spec.rb
+describe User do
+  context 'when user.first_name == nil' do
+    # instantiate FactoryGirl :user fixture with custom options
+    with :user, :first_name => nil
+    it { user.should be_inactive }
+    it { user.should_not be_happy }
+  end
+end
+```
+
+## Features
+* clean and concise DSL for instantiating FactoryGirl fixtures
+* easily configure deviations in fixtures with optional parameter hash
 
 ## Installation
 
