@@ -1,5 +1,5 @@
 Ryan Sonnek - Original Author
-
+Christopher Hendrix
 
 Complete list of contributors:
 https://github.com/wireframe/factory_girl_rspec/contributors
