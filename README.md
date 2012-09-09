@@ -14,18 +14,16 @@ describe User do
     with :user
     it { should be_inactive }
     it { should_not be_happy }
-    it { user.first_name.should_not be_nil}
-    # alternatively
-    # specify { user.first_name.should_not be_nil }
-    
-    
+    it 'has a first name' do
+    	user.first_name.should_not be_nil
+    end 
   end
   
   context 'when invalid user' do
-  	# instantiate FactoryGirl :invalid_user named factory, of User class
+  	# instantiate FactoryGirl :invalid_user factory
   	with :invalid_user
     it { should be_invalid }
-    it { invalid_user.first_name.should be_nil }
+    its(:first_name) { should be_nil }
   end
 end
 ```
@@ -49,7 +47,7 @@ describe User do
     create :user, :first_name => "Ryan" do |user|
   	  user.posts.create(attributes_for(:post))
 	end
-	it { user.first_name.should eq("Ryan") }
+	its(:first_name) { should eq("Ryan") }
   end
 end
 ```
