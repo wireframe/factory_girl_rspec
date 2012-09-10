@@ -43,7 +43,7 @@ describe User do
     it { should_not be_happy }
     
     # create FactoryGirl :user factory with custom options
-    # you can also pass in a block like with FactoryGirl 
+    # you can also pass in a block to any factory_girl_rspec methods, like with FactoryGirl 
     create :user, :first_name => "Ryan" do |user|
   	  user.posts.create(attributes_for(:post))
 	end
