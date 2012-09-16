@@ -21,15 +21,16 @@ describe User do
   
   context 'when invalid user' do
   	# instantiate FactoryGirl :invalid_user factory
-  	with :invalid_user
+  	build :invalid_user
     it { should be_invalid }
     its(:first_name) { should be_nil }
   end
 end
 ```
 
-By default, `factory_girl_rspec` uses `FactoryGirl.build` to make objects without saving them to the database. 
-If you would like to explicitly save your objects to the database, you can use the `create` method.
+By default, `factory_girl_rspec` uses `FactoryGirl.create` to make objects while saving them to the database. 
+This will throw exceptions if the validations aren't passed.
+If you would like to explicitly test invalid objects, you can use the `build` method.
 
 Advanced usage:
 
@@ -44,7 +45,7 @@ describe User do
     
     # create FactoryGirl :user factory with custom options
     # you can also pass in a block to any factory_girl_rspec methods, like with FactoryGirl 
-    create :user, :first_name => "Ryan" do |user|
+    with :user, :first_name => "Ryan" do |user|
   	  user.posts.create(attributes_for(:post))
 	end
 	its(:first_name) { should eq("Ryan") }
