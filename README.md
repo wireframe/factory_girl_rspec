@@ -9,14 +9,28 @@ Basic usage:
 ```ruby
 # spec/models/user_spec.rb
 describe User do
-  context 'basic user' do
-    # instantiate FactoryGirl :user fixture
+  context 'when basic user' do
+    # instantiate FactoryGirl :user factory
     with :user
-    it { user.should be_inactive }
-    it { user.should_not be_happy }
+    it { should be_inactive }
+    it { should_not be_happy }
+    it 'has a first name' do
+    	user.first_name.should_not be_nil
+    end 
+  end
+  
+  context 'when invalid user' do
+  	# instantiate FactoryGirl :invalid_user factory
+  	build :invalid_user
+    it { should be_invalid }
+    its(:first_name) { should be_nil }
   end
 end
 ```
+
+By default, `factory_girl_rspec` uses `FactoryGirl.create` to make objects while saving them to the database. 
+This will throw exceptions if the validations aren't passed.
+If you would like to explicitly test invalid objects, you can use the `build` method.
 
 Advanced usage:
 
@@ -24,10 +38,17 @@ Advanced usage:
 # spec/models/user_spec.rb
 describe User do
   context 'when user.first_name == nil' do
-    # instantiate FactoryGirl :user fixture with custom options
+    # instantiate FactoryGirl :user factory with custom options
     with :user, :first_name => nil
-    it { user.should be_inactive }
-    it { user.should_not be_happy }
+    it { should be_inactive }
+    it { should_not be_happy }
+    
+    # create FactoryGirl :user factory with custom options
+    # you can also pass in a block to any factory_girl_rspec methods, like with FactoryGirl 
+    with :user, :first_name => "Ryan" do |user|
+  	  user.posts.create(attributes_for(:post))
+	end
+	its(:first_name) { should eq("Ryan") }
   end
 end
 ```
