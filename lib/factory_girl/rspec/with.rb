@@ -3,12 +3,12 @@ require 'factory_girl'
 module FactoryGirl
   module Rspec
     module With
-      def with(name, options = {})
-        let(name) { ::FactoryGirl.create(name, options) }
+      def with(name, *args)
+        let(name) { ::FactoryGirl.create(name, *args) }
       end
-      
-      def with!(name, options = {})
-        let!(name) { ::FactoryGirl.create(name, options) }
+
+      def with!(name, *args)
+        let!(name) { ::FactoryGirl.create(name, *args) }
       end
     end
   end

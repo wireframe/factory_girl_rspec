@@ -29,6 +29,12 @@ describe User do
     it { user.should be_inactive }
     it { user.should_not be_happy }
   end
+
+  context 'when user is inactive' do
+    # instantiate FactoryGirl :user fixture with custom traits
+    with :user, :when_inactive
+    it { user.should be_inactive }
+  end
 end
 ```
 
@@ -44,7 +50,7 @@ gem 'factory_girl_rspec'
 ```
 
 ## Contributing
- 
+
 * Fork the project
 * Fix the issue
 * Add unit tests
