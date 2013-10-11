@@ -33,7 +33,7 @@ describe User do
   context 'when user is inactive' do
     # instantiate FactoryGirl :user fixture with custom traits
     with :user, :when_inactive
-    it { user.should be_inactive }
+    it { user_when_inactive.should be_inactive }
   end
 end
 ```

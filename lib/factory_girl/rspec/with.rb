@@ -3,12 +3,29 @@ require 'factory_girl'
 module FactoryGirl
   module Rspec
     module With
-      def with(name, *args)
-        let(name) { ::FactoryGirl.create(name, *args) }
+      # define an rspec helper method that lazily creates the referenced
+      # FactoryGirl fixture (via let)
+      # example usage:
+      #   with :user
+      def with(*args)
+        register_factory 'let', *args
       end
 
-      def with!(name, *args)
-        let!(name) { ::FactoryGirl.create(name, *args) }
+      # define an rspec helper method that eagerly creates the referenced
+      # FactoryGirl fixture (via let!)
+      # example usage:
+      #   with! :user
+      def with!(*args)
+        register_factory 'let!', *args
+      end
+
+      private
+
+      def register_factory(method_name, *args)
+        variable_name = args.reject {|arg| arg.is_a?(Hash) }.join('_')
+        send(method_name, variable_name) do
+          ::FactoryGirl.create *args
+        end
       end
     end
   end
