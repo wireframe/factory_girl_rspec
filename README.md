@@ -2,6 +2,11 @@
 
 Integrate FactoryGirl fixture initialization into the RSpec DSL.
 
+## Features
+* clean and concise DSL for instantiating FactoryGirl fixtures
+* easily configure factory variations with FactoryGirl traits or optional parameter hash
+* [includes FactoryGirl DSL into main Rspec context to DRY up creation](https://github.com/thoughtbot/factory_girl/blob/master/GETTING_STARTED.md#using-factories)
+
 ## Usage
 
 Basic usage:
@@ -37,10 +42,6 @@ describe User do
   end
 end
 ```
-
-## Features
-* clean and concise DSL for instantiating FactoryGirl fixtures
-* easily configure deviations in fixtures with optional parameter hash
 
 ## Installation
 

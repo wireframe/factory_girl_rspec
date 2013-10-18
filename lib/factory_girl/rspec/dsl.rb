@@ -2,7 +2,7 @@ require 'factory_girl'
 
 module FactoryGirl
   module Rspec
-    module With
+    module Dsl
       # define an rspec helper method that lazily creates the referenced
       # FactoryGirl fixture (via let)
       # example usage:

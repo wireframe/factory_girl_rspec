@@ -44,4 +44,19 @@ describe FactoryGirl::Rspec do
       end
     end
   end
+
+  describe FactoryGirl::Syntax::Methods do
+    context 'create' do
+      it 'is available without FactoryGirl prefix' do
+        user = create :user
+        expect(user).to_not be_nil
+      end
+    end
+    context 'build' do
+      it 'is available without FactoryGirl prefix' do
+        user = build :user
+        expect(user).to_not be_nil
+      end
+    end
+  end
 end
