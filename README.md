@@ -1,5 +1,7 @@
 # factory_girl_rspec
 
+[![Build Status](https://travis-ci.org/wireframe/factory_girl_rspec.png?branch=master)](https://travis-ci.org/wireframe/factory_girl_rspec)
+
 Integrate FactoryGirl fixture initialization into the RSpec DSL.
 
 ## Features
