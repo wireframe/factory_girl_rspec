@@ -1,4 +1,4 @@
-require 'factory_bot_rspec'
+require 'factory_girl_rspec'
 require 'models/user'
 
 FactoryBot.find_definitions
