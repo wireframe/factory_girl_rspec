@@ -3,7 +3,7 @@ $:.push File.expand_path("../lib", __FILE__)
 require "factory_bot/rspec/version"
 
 Gem::Specification.new do |s|
-  s.name        = "factory_bot_rspec"
+  s.name        = "factory_girl_rspec"
   s.version     = FactoryBot::Rspec::VERSION
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Ryan Sonnek"]

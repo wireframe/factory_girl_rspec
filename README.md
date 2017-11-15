@@ -1,4 +1,4 @@
-# factory_bot_rspec
+# factory_girl_rspec
 
 [![Build Status](https://travis-ci.org/wireframe/factory_girl_rspec.png?branch=master)](https://travis-ci.org/wireframe/factory_girl_rspec)
 
@@ -59,7 +59,7 @@ gem 'factory_girl_rspec'
 * Add unit tests
 * Submit pull request on github
 
-Original implementation described on [Ryan Sonnek's blog](http://blog.codecrate.com/2011/10/cleaner-rspecFactoryBot-integration.html)
+Original implementation described on [Ryan Sonnek's blog](http://blog.codecrate.com/2011/10/cleaner-rspecfactorygirl-integration.html)
 
 See CONTRIBUTORS.txt for list of project contributors
 
