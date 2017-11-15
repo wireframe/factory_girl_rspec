@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
   s.summary     = %q{integrate factory_bot directly into the RSpec DSL}
   s.description = %q{add helper methods to quickly instantiate and assign factory bot fixtures to your test context}
 
-  s.rubyforge_project = "factory_bot_rspec"
+  s.rubyforge_project = "factory_girl_rspec"
 
   s.add_runtime_dependency 'rspec', '>= 2.0'
   s.add_runtime_dependency 'factory_bot', '>= 4.8'
