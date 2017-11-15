@@ -1,10 +1,10 @@
-require 'factory_girl'
+require 'factory_bot'
 
-module FactoryGirl
+module FactoryBot
   module Rspec
     module Dsl
       # define an rspec helper method that lazily creates the referenced
-      # FactoryGirl fixture (via let)
+      # FactoryBot fixture (via let)
       # example usage:
       #   with :user
       def with(*args)
@@ -12,7 +12,7 @@ module FactoryGirl
       end
 
       # define an rspec helper method that eagerly creates the referenced
-      # FactoryGirl fixture (via let!)
+      # FactoryBot fixture (via let!)
       # example usage:
       #   with! :user
       def with!(*args)
@@ -24,7 +24,7 @@ module FactoryGirl
       def register_factory(method_name, *args)
         variable_name = args.reject {|arg| arg.is_a?(Hash) }.join('_')
         send(method_name, variable_name) do
-          ::FactoryGirl.create *args
+          ::FactoryBot.create *args
         end
       end
     end
