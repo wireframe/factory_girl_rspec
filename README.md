@@ -2,12 +2,12 @@
 
 [![Build Status](https://travis-ci.org/wireframe/factory_girl_rspec.png?branch=master)](https://travis-ci.org/wireframe/factory_girl_rspec)
 
-Integrate FactoryGirl fixture initialization into the RSpec DSL.
+Integrate FactoryBot fixture initialization into the RSpec DSL.
 
 ## Features
-* clean and concise DSL for instantiating FactoryGirl fixtures
-* easily configure factory variations with FactoryGirl traits or optional parameter hash
-* [includes FactoryGirl DSL into main Rspec context to DRY up creation](https://github.com/thoughtbot/factory_girl/blob/master/GETTING_STARTED.md#using-factories)
+* clean and concise DSL for instantiating FactoryBot fixtures
+* easily configure factory variations with FactoryBot traits or optional parameter hash
+* [includes FactoryBot DSL into main Rspec context to DRY up creation](https://github.com/thoughtbot/factory_bot/blob/master/GETTING_STARTED.md#using-factories)
 
 ## Usage
 
@@ -17,7 +17,7 @@ Basic usage:
 # spec/models/user_spec.rb
 describe User do
   context 'basic user' do
-    # instantiate FactoryGirl :user fixture
+    # instantiate FactoryBot :user fixture
     with :user
     it { user.should be_inactive }
     it { user.should_not be_happy }
@@ -31,14 +31,14 @@ Advanced usage:
 # spec/models/user_spec.rb
 describe User do
   context 'when user.first_name == nil' do
-    # instantiate FactoryGirl :user fixture with custom options
+    # instantiate FactoryBot :user fixture with custom options
     with :user, :first_name => nil
     it { user.should be_inactive }
     it { user.should_not be_happy }
   end
 
   context 'when user is inactive' do
-    # instantiate FactoryGirl :user fixture with custom traits
+    # instantiate FactoryBot :user fixture with custom traits
     with :user, :when_inactive
     it { user_when_inactive.should be_inactive }
   end

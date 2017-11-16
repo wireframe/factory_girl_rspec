@@ -1,7 +1,7 @@
-require 'factory_girl/rspec/dsl'
+require 'factory_bot/rspec/dsl'
 require 'rspec'
 
 RSpec.configure do |config|
-  config.extend FactoryGirl::Rspec::Dsl
-  config.include FactoryGirl::Syntax::Methods
+  config.extend FactoryBot::Rspec::Dsl
+  config.include FactoryBot::Syntax::Methods
 end

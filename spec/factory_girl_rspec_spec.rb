@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe FactoryGirl::Rspec do
+describe FactoryBot::Rspec do
   describe '.with' do
     context 'with factory' do
       with :user
@@ -45,15 +45,15 @@ describe FactoryGirl::Rspec do
     end
   end
 
-  describe FactoryGirl::Syntax::Methods do
+  describe FactoryBot::Syntax::Methods do
     context 'create' do
-      it 'is available without FactoryGirl prefix' do
+      it 'is available without FactoryBot prefix' do
         user = create :user
         expect(user).to_not be_nil
       end
     end
     context 'build' do
-      it 'is available without FactoryGirl prefix' do
+      it 'is available without FactoryBot prefix' do
         user = build :user
         expect(user).to_not be_nil
       end
